@@ -1,0 +1,123 @@
+/* src/pages/Comments.css */
+
+.comments-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.comment-list {
+  position: relative;
+  padding-left: 40px;
+  border-left: 2px solid #e0e0e0;
+}
+
+.comment-item {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.comment-item::before {
+  content: '';
+  position: absolute;
+  left: -49px;
+  top: 15px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #e74c3c;
+  z-index: 1;
+}
+
+.comment-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 15px;
+  flex-shrink: 0;
+  margin-top: 5px;
+  background-image: url('https://placehold.co/45x45/E8A8B5/FFFFFF?text=U');
+}
+
+.comment-content {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  width: 100%;
+  border: 1px solid #eee;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.comment-user {
+  font-weight: bold;
+  color: #34495e;
+}
+
+.comment-timestamp {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.comment-text {
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+/* ★ コメントのいいね機能のためのスタイルを追加 ★ */
+/* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+
+.comment-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 5px; /* アイコンと数字の間隔 */
+}
+
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  color: #888; /* デフォルトのアイコン色 */
+  transition: color 0.2s, transform 0.2s;
+}
+
+.like-button:hover {
+  transform: scale(1.15);
+  color: #e74c3c;
+}
+
+/* いいね済みの場合のスタイル */
+.like-button.liked {
+  color: #e74c3c; /* テーマカラーの赤 */
+}
+
+.like-button.liked svg {
+    fill: #e74c3c;
+}
+
+.like-count {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 500;
+  min-width: 10px;
+}
